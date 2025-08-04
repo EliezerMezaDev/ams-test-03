@@ -1,6 +1,6 @@
 import { env } from '$env/dynamic/public';
 
-export const isLocalAssets = env.PUBLIC_LOCAL_ASSETS || false;
+export const isLocalAssets = env.PUBLIC_LOCAL_ASSETS ?? false;
 
 export const getImage = (name: string) => name.replace('.png', '');
 
