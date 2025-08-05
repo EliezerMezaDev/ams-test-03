@@ -5,7 +5,15 @@ export const isLocalAssets = env.PUBLIC_LOCAL_ASSETS ?? false;
 export const getImage = (name: string) => name.replace('.png', '');
 
 export const getImageUrl = (path: string | undefined) => {
-	return isLocalAssets ? `http://localhost:1337${path}` : path;
+	if (!path) {
+		return '';
+	}
+
+	if (path.startsWith('/')) {
+		return `http://localhost:1337${path}`;
+	}
+
+	return path;
 };
 
 export const capitalizeFirstLetter = (string: string) =>

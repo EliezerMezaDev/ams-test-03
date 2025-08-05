@@ -33,8 +33,6 @@
 	onMount(() => {
 		animateElements();
 		$elementColors.copyright = 'dark';
-
-		console.log('Events data:', $Events.data?.events?.data);
 	});
 </script>
 
